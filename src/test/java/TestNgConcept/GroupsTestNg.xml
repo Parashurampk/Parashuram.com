@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="test_suite">
+	<test name="Loan">
+		<groups>
+			<run>
+				<include name="SmokeTest" /> 
+				<exclude name="Sanity"/>
+					
+			</run>
+		</groups>
+
+		<classes>
+			<class name="TestNgConcept.Personal_loan" />
+			<class name="TestNgConcept.Home_loan" />
+			<class name="TestNgConcept.Car_loan" />
+
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->  

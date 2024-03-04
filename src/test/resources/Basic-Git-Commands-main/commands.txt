@@ -1,0 +1,156 @@
+1.To generate the ssh key for GitHub:
+ssh-keygen -t rsa -C "james@google.com"
+## it will prompt for ssh key name and pass phrase, you can either provide them or leave blank. 
+Once public and private key is generated, copy the content of public key and store them in your github(Profile-->Settings-->SSH key & GPG Key).
+
+2. Add the private key from your laptop/Desktop:
+ssh-add ~./<name of private ssh key>
+## you will see message saying "identifed.."
+
+3. To check the connectivity whether ssh key is working or not
+ssh -vT git@github.com
+## you will see message saying "Hi! XYZ .."
+
+4. To initialse a local repository as git repo:
+git init
+## You will see message something like "repository initialsed as git repo"
+
+5.To Configure user email and username:
+git config --global user.email "James@google.com"
+git config --global user.name "James"
+
+## To verify user.email and user.name:
+git config --global user.email / user.name
+
+6. To check the status of your repo for changed/unchanged files:
+git status
+
+7. To check the remote url of your repo:
+git remote -v
+
+8. To add a new created/modified file to staging Area:
+git add <file_name>
+
+9. To commit your changes to local repo:
+git commit -m "message"
+
+10. To push your changes to remote repo:
+git push
+
+11. To pull the changes from remote repo to your local repo:
+git pull 
+
+12. To Undo a change in a file from working directory:
+git checkout -- <file name> 
+
+13. To Undo a change from staging area:
+git reset -- <file name>
+
+14. To remove a untracked file from working directory:
+git clean -xdf 
+
+15. To reset a commit to previous commit:
+git reset HEAD^ ## the ^ sign denotes the no. of commit back we need
+git reset HEAD~2 ##~2 denotes the no. of commit back we need
+
+16. To revert back to a commit pushed in remote repo and push back to remote repo:
+git revert <SHA Value of Latest commit>
+
+17. Git Ignore:
+## no .log file -- 
+*.log
+
+## Track Error.log, even .log are ignored
+!Error.log
+
+## only ignore TODO in current dir and not in subdir/TODO
+/TODO
+
+## ignore all files in the build /dir
+build/
+
+## ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+
+18. Branch Concept:
+## To create a branch --
+git checkout -b <branch_name>
+
+## To merge the changes switch to main branch --
+git merge <branch_name>
+
+## To publish a branch --
+git push --set-upstream origin <branch_name>
+
+19. Conflict-Resolving
+Git Commands to Resolve Conflicts
+1. git log --merge 
+
+The git log --merge command helps to produce the list of commits that are causing the conflict
+2. git diff 
+
+The git diff command helps to identify the differences between the states repositories or files
+3. git checkout 
+
+The git checkout command is used to undo the changes made to the file, or for changing branches
+4. git reset --mixed 
+
+The git reset --mixed command is used to undo changes to the working directory and staging area
+5. git merge --abort
+
+The git merge --abort command helps in exiting the merge process and returning back to the state before the merging began
+6. git reset
+
+The git reset command is used at the time of merge conflict to reset the conflicted files to their original state 
+
+20. Git Tags:
+Git has the ability to tag specific points in a repository’s history as being important. 
+use this functionality to mark release points (v1.0, v2.0 and so on).
+## To list all tags --> git tag --list / -l 
+## To Search for a tag --> git tag -l "tag_name"
+
+Creating Tags
+Git supports two types of tags: lightweight and annotated.
+
+A lightweight tag is very much like a branch that doesn’t change -- it’s just a pointer to a specific commit.
+
+Annotated Tags:
+Creating an annotated tag in Git is simple. The easiest way is to specify -a when you run the tag command: git tag -a v1.4 -m "my version 1.4"
+
+Sharing Tags:
+git push origin <tagname>
+
+Deleting Tags:
+git tag -d <tagname>
+
+Checking out Tags:
+git checkout <tag>
+
+21. Git Stash: 
+This command saves your local modifications away and reverts the working directory to match the HEAD commit.
+Save a mod file in working directory--
+git stash save "some description"
+
+View Stashes:
+git stash list
+
+Bring the changes back:
+git stash pop <stash_no.> (will remove the work from stash as welll)
+git stash apply <stash_no.> (will keep work in stash)
+
+Clear the Stash:
+git stash drop <stash_no>
+
+22. Git Remotes:
+Manage the set of repositories ("remotes") whose branches you track.
+
+Add--
+git remote add <name> url
+eg. git remote add origin git@github.com:user/gitbasic.git
+
+View--
+git remote -v
+git remote show <name>
+
+Remove--
+git remote remove <name>
