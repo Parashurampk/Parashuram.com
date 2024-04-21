@@ -1,32 +1,26 @@
-package TInterview;
+package TInterView;
 
 public class AAABB__A3B2 {
-
 	public static void main(String[] args) {
-		String input = "AAABBCDA";
-		String result = compressString(input);
-		System.out.println(result);
+		String str = "AAABBCDA";
+		String rstr = compress(str);
+		System.out.println(rstr);
 	}
-
-	private static String compressString(String input) {
-		StringBuilder compressedString = new StringBuilder();
-
+	 public static String compress(String str) {
+		StringBuilder s = new StringBuilder();
 		int count = 1;
-		for (int i = 1; i < input.length(); i++) {
-			char currentChar = input.charAt(i);
-			char previousChar = input.charAt(i - 1);
+		for (int i = 1; i < str.length(); i++) {
+			char currentChar = str.charAt(i);
+			char previousChar = str.charAt(i - 1);
 
 			if (currentChar == previousChar) {
 				count++;
 			} else {
-				compressedString.append(previousChar).append(count);
+				s.append(previousChar).append(count);
 				count = 1;
 			}
 		}
-
-		// Append the last character and its count
-		compressedString.append(input.charAt(input.length() - 1)).append(count);
-
-		return compressedString.toString();
+		s.append(str.charAt(str.length() - 1)).append(count);// Append the last character and its count
+		return s.toString();
 	}
 }

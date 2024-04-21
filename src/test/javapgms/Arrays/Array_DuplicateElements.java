@@ -1,5 +1,8 @@
 package Arrays;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Array_DuplicateElements {
 
 	public static void main(String[] args) {
@@ -14,3 +17,18 @@ public class Array_DuplicateElements {
 		}
 	}
 }
+
+//public static void main(String[] args) {
+//
+//	int[] num = { 5, 2, 4, 0, 1, 2, 5, 7 };
+//	Duplicates(num);
+//}
+//public static void Duplicates(int[] array){
+//	Set<Integer> dupnumber = new HashSet<>();
+//	for (Integer number : array) {
+//		if (!dupnumber.add(number)) {
+//			System.out.println("Duplicate elem is:" + number);
+//		}
+//	}
+//}
+//}

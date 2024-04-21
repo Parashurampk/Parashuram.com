@@ -1,4 +1,4 @@
-package TInterview;
+package TInterView;
 
 import java.util.Scanner;
 
@@ -20,3 +20,6 @@ public class FirstLastName {
 		System.out.print(word);
 	}
 }
+
+//Parashuram kantappa walikindi
+//P.k.walikindi

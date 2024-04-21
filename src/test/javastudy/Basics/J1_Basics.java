@@ -11,6 +11,10 @@ package Basics;
  			  float myWidth;
   Constants:  static final int MIN_WIDTH = 4;
   
+  --------------------------------------------------
+  == --> Operator , reference comparison , It can't overridden
+  equals --> method , Content comparison , It can overridden
+  
  */
 
 public class J1_Basics {
@@ -19,10 +23,10 @@ public class J1_Basics {
 
 		String str1 = "RCV"; // String Literal -->
 		String str2 = "RCV";
-		String str3 = new String("RCV"); // String Object  -- It creates the new object in the Heap
+		String str3 = new String("RCV"); // String Object  --> It creates the new object in the Heap
 
-		System.out.println(str1 == str3); // false
-		System.out.println(str1.equals(str3)); // true
+		System.out.println(str1 == str3); // false --> used for reference comparison /Object values comparison
+		System.out.println(str1.equals(str3)); // true --> used for Content comparison
 	}
-
 }
+

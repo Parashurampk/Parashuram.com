@@ -10,7 +10,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+//WebDriverManager library to set up and manage the ChromeDriver for Selenium WebDriver.
+//This is java Library-->It helps in automatically downloading the required WebDriver executable 
+//chromedriver(): This method is part of the WebDriverManager library and specifically indicates that you want to set up the ChromeDriver.
+		
 public class BrokenLinks {
 
 	public static void main(String[] args) throws InterruptedException, IOException {

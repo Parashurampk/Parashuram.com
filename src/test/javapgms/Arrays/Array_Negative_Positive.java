@@ -9,9 +9,7 @@ public class Array_Negative_Positive {
 		for (int e : arr)
 			System.out.print(e + " ");
 	}
-
 	public static void splitNumbers(int[] arr) {
-
 		Arrays.sort(arr);
 	}
 }

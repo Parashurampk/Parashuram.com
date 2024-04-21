@@ -9,17 +9,13 @@ public class String_AlphaNumeric_Separate {
 		String str = "abc123d$%^&ef456$%^";
 		parse(str);
 	}
-
 	public static void parse(String str) {
 		Matcher matcher = Pattern.compile(".").matcher(str);
-
 		StringBuilder sout = new StringBuilder();
 		StringBuilder nout = new StringBuilder();
 		StringBuilder scout = new StringBuilder();
-
 		while (matcher.find()) {
 			String element = matcher.group();
-
 			if (element.matches("[a-zA-Z]+")) {
 				sout.append(element);
 			} else if (element.matches("[0-9]+")) {
@@ -28,7 +24,6 @@ public class String_AlphaNumeric_Separate {
 				scout.append(element);
 			}
 		}
-
 		System.out.println("Alphabetic part: " + sout);
 		System.out.println("Numeric part: " + nout);
 		System.out.println("Special characters: " + scout);

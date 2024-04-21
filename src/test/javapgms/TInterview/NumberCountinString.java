@@ -1,17 +1,18 @@
-package TInterview;
+package TInterView;
 
 public class NumberCountinString {
-
+	
 	public static void main(String[] args) {
-		String word = "abds323a4b45a";
-		int digitCount = 0;
-
-		for (int i = 0; i < word.length(); i++) {
-			char currentChar = word.charAt(i);
-			if (Character.isDigit(currentChar)) {
-				digitCount++;
+		String str="bshaxb4567skhxb";
+		System.out.println(countInt(str));
+	}
+	public static int countInt(String str) {
+		int count = 0;
+		for (int i = 0; i < str.length(); i++) {
+			if (Character.isDigit(str.charAt(i))) {
+				count++;
 			}
 		}
-		System.out.println(digitCount);
+		return count;
 	}
 }

@@ -4,7 +4,7 @@ public class J2_Varibales {
 
 static int a = 100;// static variable
 	
-	int data = 50;// instance variable
+	int data = 50;// Global/Instance variable
 	public static void main(String args[]) {
 		
 	}

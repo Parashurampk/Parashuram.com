@@ -1,7 +1,6 @@
-package TInterview;
+package TInterView;
 
 public class SplitAndPrnitString {
-
 	public static void main(String[] args) {
 
 		String str = "Automation Interview";
@@ -10,6 +9,5 @@ public class SplitAndPrnitString {
 		for (String word : words) {
 			System.out.println(word);
 		}
-
 	}
 }

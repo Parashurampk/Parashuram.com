@@ -9,11 +9,11 @@ public class Strint_FirstLetterOfString {
 	private static void returnFirstAlphabet(String string) {
 		String word = "";
 		String[] split = string.split(" ");
-
 		for (int i = 0; i < split.length; i++) {
 			word = split[i];
-
 			System.out.print(word.charAt(0));
 		}
 	}
 }
+
+//HIaJ

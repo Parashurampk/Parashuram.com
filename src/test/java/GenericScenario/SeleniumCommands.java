@@ -95,8 +95,9 @@ public class SeleniumCommands {
 
 		// ExplicitlyWait:
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement Element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("DropDwon")));
+		WebElement Element = wait.until(ExpectedConditions.elementToBeClickable(By.id("DropDwon")));
 		Element.click();
+
 
 		// FluentWait:
 		Wait<WebDriver> wait2 = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
@@ -232,5 +233,11 @@ public class SeleniumCommands {
 
 		    WebElement fileName = driver.findElement(By.id("uploaded-files"));
 		    //Assertions.assertEquals("selenium-snapshot.png", fileName.getText());
+		    
+		    //How to input text into the text box fields without calling the sendKeys()?
+		    JavascriptExecutor executor = (JavascriptExecutor) driver;
+		    executor.executeScript("document.getElementById('textbox_id').value = 'new value';");
+		    
+
 	}
 }

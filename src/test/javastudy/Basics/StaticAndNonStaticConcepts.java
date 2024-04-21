@@ -2,15 +2,15 @@ package Basics;
 
 public class StaticAndNonStaticConcepts {
 
-	String name = "Tom";// non static global var
-	static int age = 25;// static global var
+	String name = "Tom";
+	static int age = 25;
 
 	public static void main(String[] args) {
 		
 		//-----------How to call static methods and var?------------------------
 		
-		sum();//1.direct call by method name 	
-		StaticAndNonStaticConcepts.sum();//2/calssname.method name
+		sum();                            //1.direct call by method name 	
+		StaticAndNonStaticConcepts.sum(); //2/calssname.method name
 		
 		System.out.println(age);//var name 
 		System.out.println(StaticAndNonStaticConcepts.age);// calssname.var

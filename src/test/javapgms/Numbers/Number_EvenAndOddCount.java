@@ -1,13 +1,10 @@
 package Numbers;
 
 public class Number_EvenAndOddCount {
-
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {	
 		int num=12345156;
 		int even_count=0;
 		int odd_count=0;
-		
 		while (num>0) {
 			int rem=num%10;
 			if (rem%2==0)

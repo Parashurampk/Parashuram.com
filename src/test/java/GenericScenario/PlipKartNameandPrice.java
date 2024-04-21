@@ -14,8 +14,7 @@ public class PlipKartNameandPrice {
 
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver = new ChromeDriver();
-		driver.get(
-				"https://www.flipkart.com/search?q=tshirts&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off");
+		driver.get("https://www.flipkart.com/search?q=tshirts&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off");
 		driver.manage().window().maximize();
 		Thread.sleep(3000);
 

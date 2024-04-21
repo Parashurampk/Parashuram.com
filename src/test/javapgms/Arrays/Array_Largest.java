@@ -14,3 +14,4 @@ public class Array_Largest {
 		return array[array.length - 1];// Return the third largest number from the sorted array
 	}
 }
+

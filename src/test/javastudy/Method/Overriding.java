@@ -9,7 +9,7 @@ There must be an IS-A relationship (inheritance).
 
 class Parent {
 	
-	  void fun(int x) {
+	  void fun() {
 		System.out.println("Parents doing offline business");
 	}
 }

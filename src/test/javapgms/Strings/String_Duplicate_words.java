@@ -7,14 +7,12 @@ public class String_Duplicate_words {
 
 	public static void main(String[] args) {
 		String s1 = "Hi, I am Hritik and I am a programmer";
-		String[] words = s1.split("\\W"); // splitting words using regex
+		String[] words = s1.split(" "); // splitting words using regex
 
 		Set<String> set = new HashSet<String>();
 		{
 			for (int i = 0; i < words.length - 1; i++) {
-
 				for (int j = 1; j < words.length; j++) {
-					
 						if (words[i].equals(words[j]) && i != j) {
 						set.add(words[i]);
 					}

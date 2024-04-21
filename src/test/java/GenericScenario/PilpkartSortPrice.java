@@ -20,7 +20,8 @@ public class PilpkartSortPrice {
 		driver.manage().window().maximize();
 		driver.get("https://www.flipkart.com/");
 
-		driver.findElement(By.xpath("//input[@placeholder='Search for Products, Brands and More']")).sendKeys("Mobiles");
+		driver.findElement(By.xpath("//input[@placeholder='Search for Products, Brands and More']"))
+				.sendKeys("Mobiles");
 		driver.findElement(By.xpath("(//*[name()='svg'])[1]")).click();
 
 		Thread.sleep(5000);

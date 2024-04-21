@@ -2,43 +2,50 @@ package GenericScenario;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Date;
-
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TakeScreenShot {
 
 	public static void main(String[] args) throws IOException {
 
-		Date currentdate = new Date(0);
-		String screenshotfile = currentdate.toString().replace("", "-").replace(":", "-");
-		System.out.println(screenshotfile);
-
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver = new ChromeDriver();
-		driver.get("https://www.ebay.com.au/");
-		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshotFile, new File(".//ScreenShots//" + screenshotfile + ".png"));
-	}
+		driver.get("http://google.com");
+		
+		// Generate timestamp
+		LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+        String timestamp = now.format(formatter);
 
+		// Take the screenshot
+		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+		// Define the destination file path including file name and extension
+		File destFile = new File("./Screenshots/screenshot" +timestamp+ ".png");
+
+		// Copy the screenshot to the destination file
+		FileUtils.copyFile(scrFile, destFile);
+
+		driver.quit();
+	}
 }
 
-/*
- * public static void screenShot(WebDriver driver, String filename) {
- * TakesScreenshot takesScreenshot = (TakesScreenshot) driver; File source =
- * takesScreenshot.getScreenshotAs(OutputType.FILE); try {
- * FileUtils.copyFile(source, new File(System.getProperty("user.dir") +
- * "\\ScreenShot\\" + filename + ".png")); } catch (Exception e) { // TODO
- * Auto-generated catch block e.getMessage(); } } }
- * 
- * 
- * TakesScreenshot screenshot = (TakesScreenshot)driver; File source =
- * screenshot.getScreenshotAs(OutputType.FILE); //Saving the screenshot in
- * desired location FileUtils.copyFile(source, new
- * File("./SeleniumScreenshots/Screen.png")); //Path to the location to save
- * screenshot
- */
+//************For entire page
+//File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//FileUtils.copyFile(scrFile, new File("./Screenshots/screenshot1.png"));
+
+//************For specific element
+//File scrFile = email.getScreenshotAs(OutputType.FILE);
+//FileUtils.copyFile(scrFile, new File("./Screenshots/screenshot1.png"));
+
+
+
+
+

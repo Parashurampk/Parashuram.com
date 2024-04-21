@@ -1,22 +1,19 @@
 package Strings;
 
 public class String_ReverseSentence {
-
 	public static void main(String[] args) {
 		String str = "Hello I am Japneet";
-		reverseSentence(str);
+		rSentence(str);
 	}
-
-	private static void reverseSentence(String str) {
-		String[] strSplit = str.split("\\s");
-
+	public static void rSentence(String str) {
+		String[] strSplit = str.split(" ");
 		for (int i = strSplit.length - 1; i >= 0; i--) {
 			System.out.print(strSplit[i] + " ");
 		}
 	}
 }
 
-
+//Japneet am I Hello 
 	
 
 

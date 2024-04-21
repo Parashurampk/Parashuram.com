@@ -1,4 +1,4 @@
-package TInterview;
+package TInterView;
 
 public class FirstCharacterPrintTest {
 

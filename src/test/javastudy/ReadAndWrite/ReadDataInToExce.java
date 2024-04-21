@@ -15,7 +15,7 @@ public class ReadDataInToExce {
 
 	public static void main(String[] args) throws EncryptedDocumentException, IOException {
 
-		File f = new File(System.getProperty("user.dir") + "\\src\\test\\java\\PropertiesFiles\\TestData.xls");
+		File f = new File("D:\\Eclipse Workplace\\Parashuram.com\\src\\test\\javastudy\\PropertiesFiles\\TestData.xls");
 		FileInputStream fos = new FileInputStream(f);
 
 		Workbook wb = WorkbookFactory.create(fos);

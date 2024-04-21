@@ -1,4 +1,4 @@
-package TInterview;
+package TInterView;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -8,7 +8,6 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 public class MapSortByValue {
-
 	public static void main(String[] args) {
 		Map<String, Integer> map = new HashMap<>();
 		map.put("Thirty", 30);

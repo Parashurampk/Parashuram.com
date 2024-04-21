@@ -6,7 +6,7 @@ import java.util.Set;
 public class Char_UniqueElements {
 
 	public static void main(String[] args) {
-		String s = "abcdad";
+		String s = "banana";
 		char[] cArray = s.toCharArray();
 		Set<Character> set = new HashSet<Character>();
 		for (char c : cArray) {
